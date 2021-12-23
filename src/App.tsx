@@ -8,8 +8,6 @@ const $ = window.$;
 
 function App() {
 
-  $.ig.RevealSdkSettings.setBaseUrl("https://samples.revealbi.io/upmedia-backend/reveal-api/");
-
   useEffect(() => {
     const dashboardId = "Marketing";
     $.ig.RevealUtility.loadDashboard(

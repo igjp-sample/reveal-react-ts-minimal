@@ -9,6 +9,9 @@ declare global {
 window.WebFont = window.WebFont || {}; window.$ = window.$ || {};
 const WebFont = window.WebFont;
 const $ = window.$;
+
+$.ig.RevealSdkSettings.setBaseUrl("https://samples.revealbi.io/upmedia-backend/reveal-api/");
+
 var revealTheme = new $.ig.RevealTheme();
 revealTheme.dashboardBackgroundColor = "#cccccc"; //テーマの定義を変更
 
