@@ -3,13 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+declare global {
+  interface Window { WebFont: any, $: any; }
+}
+window.WebFont = window.WebFont || {}; window.$ = window.$ || {};
+const WebFont = window.WebFont;
+const $ = window.$;
+var revealTheme = new $.ig.RevealTheme();
+revealTheme.dashboardBackgroundColor = "#cccccc"; //テーマの定義を変更
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const webfontCallback = () => {
+  $.ig.RevealView.updateRevealTheme(revealTheme);
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+};
+
+WebFont.load({
+  custom: {
+      families: ['Roboto-Regular', 'Roboto-Bold', 'Roboto-Medium']
+  },
+  active: webfontCallback
+});
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

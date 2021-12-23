@@ -1,0 +1,1 @@
+$.ig.em.strings.RevealSDKTrial = "Reveal 試用版";
